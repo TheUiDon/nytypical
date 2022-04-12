@@ -1,3 +1,5 @@
+<?php include 'sentMail.php';?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -966,46 +968,68 @@
             </div>
             <!-- Form Section -->
             <div class="col-12 col-md-5 text-center bg-light pt-5 px-4 aos-init" data-aos="fade-right">
-              <h5 class="fw-bold aos-init" data-aos="fade-right">
-                Contact Form
-              </h5>
-              <div>
-                <div class="row align-items-center pt-3 aos-init" data-aos="fade-right">
-                  <!-- Name -->
-                  <div class="col-6 pe-0 aos-init" data-aos="fade-right">
-                    <div class="form-floating mb-3 aos-init" data-aos="fade-right">
-                      <input type="text" class="form-control aos-init" data-aos="fade-right" id="floatingInput" placeholder="yourName">
-                      <label for="floatingInput">NAME</label>
+              <form action="" method="post">
+            
+                <h5 class="fw-bold aos-init" data-aos="fade-right">
+                  Contact Form
+                </h5>
+                
+                <div>
+                  <div class="row align-items-center pt-3 aos-init" data-aos="fade-right">
+                    <!-- Name -->
+                    <div class="col-6 pe-0 aos-init" data-aos="fade-right">
+                      <fieldset class="form-floating mb-3 aos-init" data-aos="fade-right">
+                        <input type="text" name="name" class="form-control aos-init" data-aos="fade-right" id="floatingInput" placeholder="yourName" autofocus>
+                        <label for="floatingInput">NAME</label>
+                      </fieldset>
                     </div>
-                  </div>
-                  <!-- Email -->
-                  <div class="col-6 pe-0 aos-init" data-aos="fade-right">
-                    <div class="form-floating mb-3 aos-init" data-aos="fade-right">
-                      <input type="email" class="form-control aos-init" data-aos="fade-right" id="floatingInput" placeholder="name@example.com">
-                      <label for="floatingInput">EMAIL</label>
+
+                    <!-- Email -->
+                    <div class="col-6 pe-0 aos-init" data-aos="fade-right">
+                      <fieldset class="form-floating mb-3 aos-init" data-aos="fade-right">
+                        <input type="email" name="email" class="form-control aos-init" data-aos="fade-right" id="floatingInput" placeholder="name@example.com">
+                        <label for="floatingInput">EMAIL</label>
+                      </fieldset>
                     </div>
-                  </div>
-                  <!-- Phone -->
-                  <div class="col-6 pe-0 aos-init" data-aos="fade-right">
-                    <div class="form-floating mb-3 aos-init" data-aos="fade-right">
-                      <input type="number" class="form-control aos-init" data-aos="fade-right" id="floatingInput" placeholder="phone">
-                      <label for="floatingInput">PHONE</label>
+
+                    <!-- Phone -->
+                    <div class="col-6 pe-0 aos-init" data-aos="fade-right">
+                      <fieldset class="form-floating mb-3 aos-init" data-aos="fade-right">
+                        <input type="tel" name="tel" class="form-control aos-init" data-aos="fade-right" id="floatingInput" placeholder="phone">
+                        <label for="floatingInput">PHONE</label>
+                      </fieldset>
                     </div>
-                  </div>
-                  <!-- Message -->
-                  <div class="col-6 pe-0 aos-init" data-aos="fade-right">
-                    <div class="form-floating mb-3 aos-init" data-aos="fade-right">
-                      <textarea class="form-control aos-init" data-aos="fade-right" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-                      <label for="floatingTextarea">MESSAGE</label>
+
+                    <!-- Message -->
+                    <div class="col-6 pe-0 aos-init" data-aos="fade-right">
+                      <fieldset class="form-floating mb-3 aos-init" data-aos="fade-right">
+                        <textarea class="form-control aos-init" name="subject" data-aos="fade-right" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+                        <label for="floatingTextarea">MESSAGE</label>
+                      </fieldset>
                     </div>
-                  </div>
-                  <div class="d-grid col-6 mx-auto pt-3 aos-init" data-aos="fade-right">
-                    <button type="button" class="btn btn-outline-dark text-uppercase fw-bold aos-init" data-aos="fade-right">
-                      Get In Touch
-                    </button>
+
+
+                    <!-- Php Result -->
+                    <div>
+                      <p class="text-success text-center"> 
+                        <?php echo $success;  ?>
+                      </p>
+                      <p class="text-danger text-center">
+                        <?php echo $failed;  ?>
+                      </p>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <fieldset class="d-grid col-6 mx-auto pt-3 aos-init" data-aos="fade-right">
+                      <button type="submit" name="submit" class="btn btn-outline-dark text-uppercase fw-bold aos-init" data-aos="fade-right" data-submit="...Sending">
+                        Get In Touch
+                      </button>
+                    </fieldset>
+
                   </div>
                 </div>
-              </div>
+
+              </form>
             </div>            
           </div>
 
